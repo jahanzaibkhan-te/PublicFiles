@@ -1,0 +1,7815 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "AmazonAds Web API",
+    "description": "List of RESTful services to manage Amazon Advertiement which includes Campaigns, Adgroups, Keywords, Profiles and Performance reports"
+  },
+  "paths": {
+    "/Admin/Ads/SchedulerSummary": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/GetSchedulerSummaryQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Admin/Ads/Scheduler": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/GetReportSyncSchedulerQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Admin/Ads/Profile": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/QueueAdsProfileSyncCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Admin/Ads/SyncProfiles": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/SyncProfileToUserCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Admin/Ads/Profiles": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "IsActive",
+            "type": "boolean",
+            "collectionFormat": "multi"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/BackgroundServices/Ads/SyncQueue": {
+      "post": {
+        "tags": [
+          "BackgroundServices"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/QueueAdsSyncCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/BackgroundServices/Ads/SyncUserQueue": {
+      "post": {
+        "tags": [
+          "BackgroundServices"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/QueueAdsSyncUserCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/BackgroundServices/Ads/ProcessQueue": {
+      "post": {
+        "tags": [
+          "BackgroundServices"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/QueueAdsProcessCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/BackgroundServices/Ads/ProcessFailedTask": {
+      "post": {
+        "tags": [
+          "BackgroundServices"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ProcessFailedTaskCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/BackgroundServices/Ads/SyncZeroImpression": {
+      "post": {
+        "tags": [
+          "BackgroundServices"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/SyncZeroImpressionCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/BackgroundServices/Reports/All": {
+      "post": {
+        "tags": [
+          "BackgroundServices"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/GetReportSyncDataQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/BulkUpdates/BulkRequest": {
+      "post": {
+        "tags": [
+          "BulkUpdates"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/CreateBulkRequestCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/BulkUpdates/ProcessBulkRequest": {
+      "get": {
+        "tags": [
+          "BulkUpdates"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/ChangeLog/All": {
+      "post": {
+        "tags": [
+          "ChangeLog"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/GetAllChangeLogQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/ChangeLog/Export": {
+      "post": {
+        "tags": [
+          "ChangeLog"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ExportAllChangeLogQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/MarketingStream/SPTrafficAndConversion/ALL": {
+      "post": {
+        "tags": [
+          "MarketingStream"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/GetSPTrafficAndConversionReportQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/MarketingStream/SPTrafficAndConversion/Export": {
+      "post": {
+        "tags": [
+          "MarketingStream"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ExportSpTrafficAndConversionReportQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/MarketingStream/SPTraffic/Export": {
+      "post": {
+        "tags": [
+          "MarketingStream"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ExportSPTrafficReportQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/MarketingStream/SPConversion/Export": {
+      "post": {
+        "tags": [
+          "MarketingStream"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ExportSPConversionReportQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/MarketingStream/SBTrafficAndConversion/ALL": {
+      "post": {
+        "tags": [
+          "MarketingStream"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/GetSBTrafficAndConversionReportQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/MarketingStream/SBTrafficAndConversion/Export": {
+      "post": {
+        "tags": [
+          "MarketingStream"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ExportSBTrafficAndConversionReportQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/MarketingStream/SBTraffic/Export": {
+      "post": {
+        "tags": [
+          "MarketingStream"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ExportSBTrafficReportQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/MarketingStream/SBConversion/Export": {
+      "post": {
+        "tags": [
+          "MarketingStream"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ExportSBConversionReportQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/MarketingStream/SDTrafficAndConversion/ALL": {
+      "post": {
+        "tags": [
+          "MarketingStream"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/GetSDTrafficAndConversionReportQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/MarketingStream/SDTrafficAndConversion/Export": {
+      "post": {
+        "tags": [
+          "MarketingStream"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ExportSDTrafficAndConversionReportQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/MarketingStream/SDTraffic/Export": {
+      "post": {
+        "tags": [
+          "MarketingStream"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ExportSDTrafficReportQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/MarketingStream/SDConversion/Export": {
+      "post": {
+        "tags": [
+          "MarketingStream"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ExportSDConversionReportQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/MarketingStream/SPTraffic": {
+      "get": {
+        "tags": [
+          "MarketingStream"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/MarketingStream/SPConversion": {
+      "get": {
+        "tags": [
+          "MarketingStream"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/MarketingStream/SBTraffic": {
+      "get": {
+        "tags": [
+          "MarketingStream"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/MarketingStream/SBConversion": {
+      "get": {
+        "tags": [
+          "MarketingStream"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/MarketingStream/SDTraffic": {
+      "get": {
+        "tags": [
+          "MarketingStream"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/MarketingStream/SDConversion": {
+      "get": {
+        "tags": [
+          "MarketingStream"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/MasterData": {
+      "post": {
+        "tags": [
+          "MasterData"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/SaveMasterDataCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "MasterData"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/MasterData/{id}": {
+      "delete": {
+        "tags": [
+          "MasterData"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/MasterData/{name}": {
+      "get": {
+        "tags": [
+          "MasterData"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Permissions": {
+      "post": {
+        "tags": [
+          "Permissions"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/CreatePermissionCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Permissions"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Permissions/{id}": {
+      "put": {
+        "tags": [
+          "Permissions"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdatePermissionCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Permissions"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Permissions"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Recommendation/Approve": {
+      "post": {
+        "tags": [
+          "Recommendation"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ApproveRecommendationsCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Recommendation/All": {
+      "post": {
+        "tags": [
+          "Recommendation"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/GetAllRecommendationQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Recommendation/Remove": {
+      "post": {
+        "tags": [
+          "Recommendation"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/DeleteRecommendationCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Recommendation/ComparisonData": {
+      "get": {
+        "tags": [
+          "Recommendation"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "TargetId",
+            "type": "string",
+            "collectionFormat": "multi"
+          },
+          {
+            "in": "query",
+            "name": "Metrics",
+            "type": "string",
+            "collectionFormat": "multi"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Roles": {
+      "post": {
+        "tags": [
+          "Roles"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/CreateRoleCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Roles"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "Page",
+            "type": "integer",
+            "format": "int32",
+            "collectionFormat": "multi"
+          },
+          {
+            "in": "query",
+            "name": "PerPage",
+            "type": "integer",
+            "format": "int32",
+            "collectionFormat": "multi"
+          },
+          {
+            "in": "query",
+            "name": "Filter",
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Where"
+            },
+            "collectionFormat": "multi"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Roles/{id}": {
+      "put": {
+        "tags": [
+          "Roles"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdateRoleCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Roles"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Roles"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Rule": {
+      "post": {
+        "tags": [
+          "Rule"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/CreateRuleCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Rule"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdateRuleCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Rule"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/DeleteRuleCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Rule/{Id}": {
+      "get": {
+        "tags": [
+          "Rule"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Rule/All": {
+      "post": {
+        "tags": [
+          "Rule"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/GetAllRuleQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Rule/CampaignName": {
+      "post": {
+        "tags": [
+          "Rule"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "File",
+            "type": "file"
+          },
+          {
+            "in": "formData",
+            "name": "RuleId",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "ProfileId",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "SearchText",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "Assign",
+            "type": "boolean",
+            "default": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Rule/BulkOperation/Campaign": {
+      "post": {
+        "tags": [
+          "Rule"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "File",
+            "type": "file"
+          },
+          {
+            "in": "formData",
+            "name": "RuleId",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "formData",
+            "name": "ProfileId",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "SearchText",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "Assign",
+            "type": "boolean",
+            "default": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Rule/RuleName": {
+      "post": {
+        "tags": [
+          "Rule"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "CampaignId",
+            "type": "string",
+            "collectionFormat": "multi"
+          },
+          {
+            "in": "query",
+            "name": "ProfileId",
+            "type": "string",
+            "collectionFormat": "multi"
+          },
+          {
+            "in": "query",
+            "name": "SearchText",
+            "type": "string",
+            "collectionFormat": "multi"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Rule/Duplicate/{Id}": {
+      "post": {
+        "tags": [
+          "Rule"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Rule/Status": {
+      "put": {
+        "tags": [
+          "Rule"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdateRulesStatusCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Rule/ChangeLog": {
+      "post": {
+        "tags": [
+          "Rule"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/GetChangeLogByRuleQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Rule/ChangeLog/All": {
+      "post": {
+        "tags": [
+          "Rule"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/GetChangeLogsQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Rule/Templates": {
+      "get": {
+        "tags": [
+          "Rule"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Rule"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/DeleteTemplateCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Rule/Template/{Id}": {
+      "get": {
+        "tags": [
+          "Rule"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Rule/Template": {
+      "put": {
+        "tags": [
+          "Rule"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdateTemplateCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Rule/Templates/All": {
+      "post": {
+        "tags": [
+          "Rule"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/GetAllTemplatesQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Rule/Templates/Status": {
+      "put": {
+        "tags": [
+          "Rule"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdateTemplateStatusCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Rule/Template/Duplicate/{Id}": {
+      "post": {
+        "tags": [
+          "Rule"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Rule/SyncCampaigns": {
+      "post": {
+        "tags": [
+          "Rule"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "ProfileId",
+            "type": "string",
+            "collectionFormat": "multi"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Rule/MapCampaigns": {
+      "post": {
+        "tags": [
+          "Rule"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/MapCampaignsCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Rule/BulkOperation/Campaigns": {
+      "put": {
+        "tags": [
+          "Rule"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdateBulkCampaignCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Rule"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/DeleteBulkCampaignCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Rule"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/GetMapCampaignsQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Rule/InitiateRuleAutomation": {
+      "get": {
+        "tags": [
+          "Rule"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "Id",
+            "type": "string",
+            "collectionFormat": "multi"
+          },
+          {
+            "in": "query",
+            "name": "AutomateRule",
+            "type": "boolean",
+            "collectionFormat": "multi"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Rule/ProcessRuleAutomation": {
+      "get": {
+        "tags": [
+          "Rule"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Rule/ProcessAdsQueue": {
+      "get": {
+        "tags": [
+          "Rule"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Rule/Budget": {
+      "post": {
+        "tags": [
+          "Rule"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/CreateCampaignRuleCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Rule"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdateCampaignRuleCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Ads/SBCampaignManager/AdGroups": {
+      "post": {
+        "tags": [
+          "SBCampaignManager"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/GetSBAdGroupsQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Ads/SBCampaignManager/AdGroups/Export": {
+      "post": {
+        "tags": [
+          "SBCampaignManager"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ExportSBAdGroupsQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Ads/SBCampaignManager/Campaigns": {
+      "post": {
+        "tags": [
+          "SBCampaignManager"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/GetSBCampaignsQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Ads/SBCampaignManager/Campaigns/Export": {
+      "post": {
+        "tags": [
+          "SBCampaignManager"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ExportSBCampaignsQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Ads/SBCampaignManager/Marketplaces": {
+      "post": {
+        "tags": [
+          "SBCampaignManager"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/GetSBMarketplaceQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Ads/SBCampaignManager/Marketplaces/Export": {
+      "post": {
+        "tags": [
+          "SBCampaignManager"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ExportSBMarketplaceQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Ads/SBCampaignManager/Portfolios": {
+      "post": {
+        "tags": [
+          "SBCampaignManager"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/GetSBPortfoliosQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Ads/SBCampaignManager/Portfolios/Export": {
+      "post": {
+        "tags": [
+          "SBCampaignManager"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ExportSBPortfoliosQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Ads/SBCampaignManager/Targets": {
+      "post": {
+        "tags": [
+          "SBCampaignManager"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/GetSBTargetsQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Ads/SBCampaignManager/Targets/Export": {
+      "post": {
+        "tags": [
+          "SBCampaignManager"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ExportSBTargetsQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Ads/SDCampaignManager/AdGroups": {
+      "post": {
+        "tags": [
+          "SDCampaignManager"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/GetSDAdGroupsQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Ads/SDCampaignManager/AdGroups/Export": {
+      "post": {
+        "tags": [
+          "SDCampaignManager"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ExportSDAdGroupsQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Ads/SDCampaignManager/Campaigns": {
+      "post": {
+        "tags": [
+          "SDCampaignManager"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/GetSDCampaignsQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Ads/SDCampaignManager/Campaigns/Export": {
+      "post": {
+        "tags": [
+          "SDCampaignManager"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ExportSDCampaignsQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Ads/SDCampaignManager/Marketplaces": {
+      "post": {
+        "tags": [
+          "SDCampaignManager"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/GetSDMarketplaceQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Ads/SDCampaignManager/Marketplaces/Export": {
+      "post": {
+        "tags": [
+          "SDCampaignManager"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ExportSDMarketplaceQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Ads/SDCampaignManager/Portfolios": {
+      "post": {
+        "tags": [
+          "SDCampaignManager"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/GetSDPortfoliosQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Ads/SDCampaignManager/Portfolios/Export": {
+      "post": {
+        "tags": [
+          "SDCampaignManager"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ExportSDPortfoliosQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Ads/SDCampaignManager/Targets": {
+      "post": {
+        "tags": [
+          "SDCampaignManager"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/GetSDTargetsQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Ads/SDCampaignManager/Targets/Export": {
+      "post": {
+        "tags": [
+          "SDCampaignManager"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ExportSDTargetsQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Ads/SDCampaignManager/Products": {
+      "post": {
+        "tags": [
+          "SDCampaignManager"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/GetSDProductsQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Ads/SDCampaignManager/Products/Export": {
+      "post": {
+        "tags": [
+          "SDCampaignManager"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ExportSDProductsQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/SellingPartnerService/SyncQueue": {
+      "post": {
+        "tags": [
+          "SellingPartnerService"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/QueueSpApiReportSyncCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/SellingPartnerService/ProcessQueue": {
+      "post": {
+        "tags": [
+          "SellingPartnerService"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ProcessSpApiReportQueueCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/SellingPartnerService/SalesAndTraffic/Report": {
+      "post": {
+        "tags": [
+          "SellingPartnerService"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/GetSalesAndTrafficReportsQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/SellingPartnerService/SalesAndTraffic/Export": {
+      "post": {
+        "tags": [
+          "SellingPartnerService"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ExportSpApiReportQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/SellingPartnerService/Sales/Sessions": {
+      "post": {
+        "tags": [
+          "SellingPartnerService"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/GetSalesSessionsQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/SellingPartnerService/Sales/Sessions/Export": {
+      "post": {
+        "tags": [
+          "SellingPartnerService"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ExportSalesSessionsQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/SellingPartnerService/Sales/BuyBox": {
+      "post": {
+        "tags": [
+          "SellingPartnerService"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/GetSalesBuyBoxQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/SellingPartnerService/Sales/BuyBox/Export": {
+      "post": {
+        "tags": [
+          "SellingPartnerService"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ExportSalesBuyBoxQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/SellingPartnerService/Sales/Orders": {
+      "post": {
+        "tags": [
+          "SellingPartnerService"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/GetSalesOrdersQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/SellingPartnerService/Sales/Orders/Export": {
+      "post": {
+        "tags": [
+          "SellingPartnerService"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ExportSalesOrdersQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/SellingPartnerService/Sales/Cvr": {
+      "post": {
+        "tags": [
+          "SellingPartnerService"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/GetSalesCVRQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/SellingPartnerService/Sales/Cvr/Export": {
+      "post": {
+        "tags": [
+          "SellingPartnerService"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ExportSalesCVRQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/SellingPartnerService/Sales/Revenue": {
+      "post": {
+        "tags": [
+          "SellingPartnerService"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/GetSalesRevenueQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/SellingPartnerService/Sales/Revenue/Export": {
+      "post": {
+        "tags": [
+          "SellingPartnerService"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ExportSalesRevenueQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/SellingPartnerService/Sales/Tacos": {
+      "post": {
+        "tags": [
+          "SellingPartnerService"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/GetSalesTacosQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/SellingPartnerService/Sales/Tacos/Export": {
+      "post": {
+        "tags": [
+          "SellingPartnerService"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ExportSalesTacosQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Settings": {
+      "post": {
+        "tags": [
+          "Settings"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/SaveSettingsCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Settings"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Ads/SPCampaignManager/AdGroups": {
+      "post": {
+        "tags": [
+          "SPCampaignManager"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/GetAdGroupsQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Ads/SPCampaignManager/AdGroups/Export": {
+      "post": {
+        "tags": [
+          "SPCampaignManager"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ExportAdGroupsQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Ads/SPCampaignManager/Campaigns": {
+      "post": {
+        "tags": [
+          "SPCampaignManager"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/GetCampaignsQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Ads/SPCampaignManager/Campaigns/Export": {
+      "post": {
+        "tags": [
+          "SPCampaignManager"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ExportCampaignsQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Ads/SPCampaignManager/Marketplaces": {
+      "post": {
+        "tags": [
+          "SPCampaignManager"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/GetMarketPlacesQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Ads/SPCampaignManager/Marketplaces/Export": {
+      "post": {
+        "tags": [
+          "SPCampaignManager"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ExportMarketPlacesQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Ads/SPCampaignManager/Products": {
+      "post": {
+        "tags": [
+          "SPCampaignManager"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/GetProductsQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Ads/SPCampaignManager/Products/Export": {
+      "post": {
+        "tags": [
+          "SPCampaignManager"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ExportProductsQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Ads/SPCampaignManager/Portfolios": {
+      "post": {
+        "tags": [
+          "SPCampaignManager"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/GetPortfoliosQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Ads/SPCampaignManager/Portfolios/Export": {
+      "post": {
+        "tags": [
+          "SPCampaignManager"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ExportPortfoliosQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Ads/SPCampaignManager/Targets": {
+      "post": {
+        "tags": [
+          "SPCampaignManager"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/GetTargetsQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Ads/SPCampaignManager/Targets/Export": {
+      "post": {
+        "tags": [
+          "SPCampaignManager"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ExportTargetsQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Users/Login": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/LoginCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Users/Register": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/CreateUserCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Users/All": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Users/{id}": {
+      "delete": {
+        "tags": [
+          "Users"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Users"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdateUserCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Users/ForgotPassword": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ForgotPasswordCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Users/ResetPassword": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ResetPasswordCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Users/Activate": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ActivateCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Users/ResendActivationEmail": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ResendActivationEmailCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Users/Me": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Users/Logout": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/LogoutCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Users/APICredentials": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "userId",
+            "type": "string",
+            "collectionFormat": "multi"
+          },
+          {
+            "in": "query",
+            "name": "type",
+            "type": "string",
+            "collectionFormat": "multi"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Users/Profile": {
+      "put": {
+        "tags": [
+          "Users"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdateProfilesCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Users/OAuthLogin": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/OAuthLoginCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Users/Onboarding/ProfilePreferences": {
+      "put": {
+        "tags": [
+          "Users"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdateProfilePreferencesCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Users/ProfileImage": {
+      "put": {
+        "tags": [
+          "Users"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "File",
+            "type": "file"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Users/Changepassword": {
+      "put": {
+        "tags": [
+          "Users"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdatePasswordCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "ActionCriteria": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TargetData"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "ActionCriteriaDto": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TargetDataDto"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "ActivateCommand": {
+      "type": "object",
+      "properties": {
+        "token": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "AdType": {
+      "enum": [
+        "Auto",
+        "Manual"
+      ],
+      "type": "string"
+    },
+    "AdsProfiles": {
+      "type": "object",
+      "properties": {
+        "profileId": {
+          "type": "string"
+        },
+        "isActive": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "AdvancedFilter": {
+      "type": "object",
+      "properties": {
+        "logicalOperator": {
+          "$ref": "#/definitions/LogicalOperator"
+        },
+        "conditions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ConditionFilter"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "ApplyToCampaigns": {
+      "type": "object",
+      "properties": {
+        "campaignId": {
+          "type": "string"
+        },
+        "campaignName": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ApplyToDto": {
+      "type": "object",
+      "properties": {
+        "campaigns": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ApplyToCampaigns"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "ApproveRecommendationsCommand": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "customBid": {
+          "format": "double",
+          "type": "number"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "AwsProfilePreferenceCommand": {
+      "type": "object",
+      "properties": {
+        "profileId": {
+          "type": "string"
+        },
+        "isActive": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "BaseConditionFilter": {
+      "type": "object",
+      "properties": {
+        "logicalOperator": {
+          "$ref": "#/definitions/LogicalOperator"
+        },
+        "operator": {
+          "$ref": "#/definitions/FilterOperator"
+        },
+        "value": {
+          "type": "string"
+        },
+        "secondValue": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "CampaignActionCriteriaDto": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CampaignTargetDataDto"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "CampaignExpressionDto": {
+      "type": "object",
+      "properties": {
+        "target": {
+          "type": "string"
+        },
+        "operand": {
+          "type": "string"
+        },
+        "operator": {
+          "type": "string"
+        },
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CampaignExpressionValueDto"
+          }
+        },
+        "unit": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "CampaignExpressionValueDto": {
+      "type": "object",
+      "properties": {
+        "inputType": {
+          "type": "string"
+        },
+        "inputExpression": {
+          "$ref": "#/definitions/CampaignInputExpressionDto"
+        }
+      },
+      "additionalProperties": false
+    },
+    "CampaignInputExpressionDto": {
+      "type": "object",
+      "properties": {
+        "operand": {
+          "type": "string"
+        },
+        "input": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "CampaignTargetCriteriaDto": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CampaignTargetDataDto"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "CampaignTargetDataDto": {
+      "type": "object",
+      "properties": {
+        "logicalAND": {
+          "type": "boolean"
+        },
+        "expressions": {
+          "$ref": "#/definitions/CampaignExpressionDto"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ColumnFilter": {
+      "type": "object",
+      "properties": {
+        "columnName": {
+          "type": "string"
+        },
+        "columnConditions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BaseConditionFilter"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "ConditionFilter": {
+      "type": "object",
+      "properties": {
+        "logicalOperator": {
+          "$ref": "#/definitions/LogicalOperator"
+        },
+        "operator": {
+          "$ref": "#/definitions/FilterOperator"
+        },
+        "value": {
+          "type": "string"
+        },
+        "secondValue": {
+          "type": "string"
+        },
+        "columnName": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "CreateBulkRequestCommand": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "operation": {
+          "type": "string"
+        },
+        "reportType": {
+          "type": "string"
+        },
+        "value": { },
+        "identifiers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/IdentifiersDto"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "CreateCampaignRuleCommand": {
+      "type": "object",
+      "properties": {
+        "profileId": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "isTargetRule": {
+          "default": false,
+          "type": "boolean"
+        },
+        "isBudgetRule": {
+          "default": true,
+          "type": "boolean"
+        },
+        "template": {
+          "default": false,
+          "type": "boolean"
+        },
+        "targetCriteria": {
+          "$ref": "#/definitions/CampaignTargetCriteriaDto"
+        },
+        "actionCriteria": {
+          "$ref": "#/definitions/CampaignActionCriteriaDto"
+        },
+        "times": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "applyTo": {
+          "$ref": "#/definitions/ApplyToDto"
+        },
+        "applyZeroImpression": {
+          "default": false,
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "CreatePermissionCommand": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "isActive": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "CreateRoleCommand": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "permissionIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "CreateRuleCommand": {
+      "type": "object",
+      "properties": {
+        "profileId": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "isTargetRule": {
+          "default": true,
+          "type": "boolean"
+        },
+        "template": {
+          "default": false,
+          "type": "boolean"
+        },
+        "targetCriteria": {
+          "$ref": "#/definitions/TargetCriteriaDto"
+        },
+        "actionCriteria": {
+          "$ref": "#/definitions/ActionCriteriaDto"
+        },
+        "automationCriteria": {
+          "$ref": "#/definitions/TargetCriteriaDto"
+        },
+        "frequency": {
+          "$ref": "#/definitions/FrequencyDto"
+        },
+        "applyTo": {
+          "$ref": "#/definitions/ApplyToDto"
+        },
+        "applyZeroImpression": {
+          "default": false,
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "CreateUserCommand": {
+      "type": "object",
+      "properties": {
+        "userName": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "DateRange": {
+      "enum": [
+        "Today",
+        "Yesterday",
+        "ThisWeek",
+        "LastWeek",
+        "ThisMonth",
+        "LastMonth",
+        "Last7Days",
+        "Last14Days",
+        "Last30Days",
+        "Last60Days",
+        "Last65Days",
+        "Last90Days",
+        "Last180Days",
+        "YearToDate",
+        "LastYear",
+        "LifeTime",
+        "Custom"
+      ],
+      "type": "string"
+    },
+    "DateRanges": {
+      "type": "object",
+      "properties": {
+        "dateRange": {
+          "$ref": "#/definitions/DateRange"
+        },
+        "startDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "endDate": {
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "DeleteBulkCampaignCommand": {
+      "type": "object",
+      "properties": {
+        "profileId": {
+          "type": "string"
+        },
+        "campaigns": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ApplyToCampaigns"
+          }
+        },
+        "ruleId": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "userId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "DeleteRecommendationCommand": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "DeleteRuleCommand": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "DeleteTemplateCommand": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "ExportAdGroupsQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "fileName": {
+          "type": "string"
+        },
+        "format": {
+          "$ref": "#/definitions/ExportFormat"
+        },
+        "zipFile": {
+          "type": "boolean"
+        },
+        "visibleColumns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ExportAllChangeLogQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "fileName": {
+          "type": "string"
+        },
+        "format": {
+          "$ref": "#/definitions/ExportFormat"
+        },
+        "zipFile": {
+          "type": "boolean"
+        },
+        "visibleColumns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "profileId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ExportCampaignsQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "fileName": {
+          "type": "string"
+        },
+        "format": {
+          "$ref": "#/definitions/ExportFormat"
+        },
+        "zipFile": {
+          "type": "boolean"
+        },
+        "visibleColumns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ExportFormat": {
+      "enum": [
+        "CSV",
+        "Excel",
+        "PDF"
+      ],
+      "type": "string"
+    },
+    "ExportMarketPlacesQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "fileName": {
+          "type": "string"
+        },
+        "format": {
+          "$ref": "#/definitions/ExportFormat"
+        },
+        "zipFile": {
+          "type": "boolean"
+        },
+        "visibleColumns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ExportPortfoliosQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "fileName": {
+          "type": "string"
+        },
+        "format": {
+          "$ref": "#/definitions/ExportFormat"
+        },
+        "zipFile": {
+          "type": "boolean"
+        },
+        "visibleColumns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ExportProductsQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "fileName": {
+          "type": "string"
+        },
+        "format": {
+          "$ref": "#/definitions/ExportFormat"
+        },
+        "zipFile": {
+          "type": "boolean"
+        },
+        "visibleColumns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ExportSBAdGroupsQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "fileName": {
+          "type": "string"
+        },
+        "format": {
+          "$ref": "#/definitions/ExportFormat"
+        },
+        "zipFile": {
+          "type": "boolean"
+        },
+        "visibleColumns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ExportSBCampaignsQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "fileName": {
+          "type": "string"
+        },
+        "format": {
+          "$ref": "#/definitions/ExportFormat"
+        },
+        "zipFile": {
+          "type": "boolean"
+        },
+        "visibleColumns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ExportSBConversionReportQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "profileId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ExportSBMarketplaceQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "fileName": {
+          "type": "string"
+        },
+        "format": {
+          "$ref": "#/definitions/ExportFormat"
+        },
+        "zipFile": {
+          "type": "boolean"
+        },
+        "visibleColumns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ExportSBPortfoliosQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "fileName": {
+          "type": "string"
+        },
+        "format": {
+          "$ref": "#/definitions/ExportFormat"
+        },
+        "zipFile": {
+          "type": "boolean"
+        },
+        "visibleColumns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ExportSBTargetsQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "fileName": {
+          "type": "string"
+        },
+        "format": {
+          "$ref": "#/definitions/ExportFormat"
+        },
+        "zipFile": {
+          "type": "boolean"
+        },
+        "visibleColumns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ExportSBTrafficAndConversionReportQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "fileName": {
+          "type": "string"
+        },
+        "format": {
+          "$ref": "#/definitions/ExportFormat"
+        },
+        "zipFile": {
+          "type": "boolean"
+        },
+        "visibleColumns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "profileId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ExportSBTrafficReportQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "profileId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ExportSDAdGroupsQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "fileName": {
+          "type": "string"
+        },
+        "format": {
+          "$ref": "#/definitions/ExportFormat"
+        },
+        "zipFile": {
+          "type": "boolean"
+        },
+        "visibleColumns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ExportSDCampaignsQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "fileName": {
+          "type": "string"
+        },
+        "format": {
+          "$ref": "#/definitions/ExportFormat"
+        },
+        "zipFile": {
+          "type": "boolean"
+        },
+        "visibleColumns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ExportSDConversionReportQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "profileId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ExportSDMarketplaceQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "fileName": {
+          "type": "string"
+        },
+        "format": {
+          "$ref": "#/definitions/ExportFormat"
+        },
+        "zipFile": {
+          "type": "boolean"
+        },
+        "visibleColumns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ExportSDPortfoliosQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "fileName": {
+          "type": "string"
+        },
+        "format": {
+          "$ref": "#/definitions/ExportFormat"
+        },
+        "zipFile": {
+          "type": "boolean"
+        },
+        "visibleColumns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ExportSDProductsQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "fileName": {
+          "type": "string"
+        },
+        "format": {
+          "$ref": "#/definitions/ExportFormat"
+        },
+        "zipFile": {
+          "type": "boolean"
+        },
+        "visibleColumns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ExportSDTargetsQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "fileName": {
+          "type": "string"
+        },
+        "format": {
+          "$ref": "#/definitions/ExportFormat"
+        },
+        "zipFile": {
+          "type": "boolean"
+        },
+        "visibleColumns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ExportSDTrafficAndConversionReportQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "fileName": {
+          "type": "string"
+        },
+        "format": {
+          "$ref": "#/definitions/ExportFormat"
+        },
+        "zipFile": {
+          "type": "boolean"
+        },
+        "visibleColumns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "profileId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ExportSDTrafficReportQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "profileId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ExportSPConversionReportQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "fileName": {
+          "type": "string"
+        },
+        "format": {
+          "$ref": "#/definitions/ExportFormat"
+        },
+        "zipFile": {
+          "type": "boolean"
+        },
+        "visibleColumns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "profileId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ExportSPTrafficReportQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "fileName": {
+          "type": "string"
+        },
+        "format": {
+          "$ref": "#/definitions/ExportFormat"
+        },
+        "zipFile": {
+          "type": "boolean"
+        },
+        "visibleColumns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "profileId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ExportSalesBuyBoxQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "fileName": {
+          "type": "string"
+        },
+        "format": {
+          "$ref": "#/definitions/ExportFormat"
+        },
+        "zipFile": {
+          "type": "boolean"
+        },
+        "visibleColumns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ExportSalesCVRQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ExportSalesOrdersQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "fileName": {
+          "type": "string"
+        },
+        "format": {
+          "$ref": "#/definitions/ExportFormat"
+        },
+        "zipFile": {
+          "type": "boolean"
+        },
+        "visibleColumns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ExportSalesRevenueQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ExportSalesSessionsQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "fileName": {
+          "type": "string"
+        },
+        "format": {
+          "$ref": "#/definitions/ExportFormat"
+        },
+        "zipFile": {
+          "type": "boolean"
+        },
+        "visibleColumns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ExportSalesTacosQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ExportSpApiReportQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "fileName": {
+          "type": "string"
+        },
+        "format": {
+          "$ref": "#/definitions/ExportFormat"
+        },
+        "zipFile": {
+          "type": "boolean"
+        },
+        "visibleColumns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "date": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ExportSpTrafficAndConversionReportQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "fileName": {
+          "type": "string"
+        },
+        "format": {
+          "$ref": "#/definitions/ExportFormat"
+        },
+        "zipFile": {
+          "type": "boolean"
+        },
+        "visibleColumns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "profileId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ExportTargetsQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "fileName": {
+          "type": "string"
+        },
+        "format": {
+          "$ref": "#/definitions/ExportFormat"
+        },
+        "zipFile": {
+          "type": "boolean"
+        },
+        "visibleColumns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Expression": {
+      "type": "object",
+      "properties": {
+        "target": {
+          "type": "string"
+        },
+        "operand": {
+          "type": "string"
+        },
+        "operator": {
+          "type": "string"
+        },
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ExpressionValue"
+          }
+        },
+        "unit": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ExpressionDto": {
+      "type": "object",
+      "properties": {
+        "target": {
+          "type": "string"
+        },
+        "operand": {
+          "type": "string"
+        },
+        "operator": {
+          "type": "string"
+        },
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ExpressionValueDto"
+          }
+        },
+        "unit": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ExpressionValue": {
+      "type": "object",
+      "properties": {
+        "inputType": {
+          "type": "string"
+        },
+        "inputExpression": {
+          "$ref": "#/definitions/InputExpression"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ExpressionValueDto": {
+      "type": "object",
+      "properties": {
+        "inputType": {
+          "type": "string"
+        },
+        "inputExpression": {
+          "$ref": "#/definitions/InputExpressionDto"
+        }
+      },
+      "additionalProperties": false
+    },
+    "FilterOperator": {
+      "enum": [
+        "Equal",
+        "NotEqual",
+        "GreaterThan",
+        "LessThan",
+        "GreaterThanOrEqual",
+        "LessThanOrEqual",
+        "Contains",
+        "NotContains",
+        "In",
+        "NotIn",
+        "Like",
+        "NotLike",
+        "DateRange",
+        "ValueRange",
+        "Between"
+      ],
+      "type": "string"
+    },
+    "FilterType": {
+      "enum": [
+        "Equals",
+        "GreaterThan",
+        "GreaterThanOrEqual",
+        "LessThan",
+        "LessThanOrEqual",
+        "Like"
+      ],
+      "type": "string"
+    },
+    "ForgotPasswordCommand": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "passwordResetUrl": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Frequency": {
+      "type": "object",
+      "properties": {
+        "occurrence": {
+          "$ref": "#/definitions/Occurrence"
+        },
+        "dateRange": {
+          "$ref": "#/definitions/Occurrence"
+        },
+        "automationInterval": {
+          "$ref": "#/definitions/Occurrence"
+        }
+      },
+      "additionalProperties": false
+    },
+    "FrequencyDto": {
+      "type": "object",
+      "properties": {
+        "occurrence": {
+          "$ref": "#/definitions/OccurrenceDto"
+        },
+        "dateRange": {
+          "$ref": "#/definitions/OccurrenceDto"
+        },
+        "automationInterval": {
+          "$ref": "#/definitions/OccurrenceDto"
+        }
+      },
+      "additionalProperties": false
+    },
+    "GetAdGroupsQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "GetAllChangeLogQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "profileId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "GetAllRecommendationQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "profileId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "GetAllRuleQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilter"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "GetAllTemplatesQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilter"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "GetCampaignsQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "GetChangeLogByRuleQuery": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilterChangeLog"
+        }
+      },
+      "additionalProperties": false
+    },
+    "GetChangeLogsQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilterChangeLog"
+        }
+      },
+      "additionalProperties": false
+    },
+    "GetMapCampaignsQuery": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "profileId": {
+          "type": "string"
+        },
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilter"
+        }
+      },
+      "additionalProperties": false
+    },
+    "GetMarketPlacesQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "GetPortfoliosQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "GetProductsQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "GetReportSyncDataQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "profileId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "GetReportSyncSchedulerQuery": {
+      "type": "object",
+      "properties": {
+        "startDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "endDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "searchText": {
+          "type": "string"
+        },
+        "reportsData": {
+          "type": "boolean"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "GetSBAdGroupsQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "GetSBCampaignsQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "GetSBMarketplaceQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "GetSBPortfoliosQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "GetSBTargetsQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "GetSBTrafficAndConversionReportQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "profileId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "GetSDAdGroupsQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "GetSDCampaignsQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "GetSDMarketplaceQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "GetSDPortfoliosQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "GetSDProductsQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "GetSDTargetsQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "GetSDTrafficAndConversionReportQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "profileId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "GetSPTrafficAndConversionReportQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "profileId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "GetSalesAndTrafficReportsQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "date": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "GetSalesBuyBoxQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "GetSalesCVRQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "GetSalesOrdersQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "GetSalesRevenueQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "GetSalesSessionsQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "GetSalesTacosQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "GetSchedulerSummaryQuery": {
+      "type": "object",
+      "properties": {
+        "startDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "endDate": {
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "GetTargetsQuery": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          }
+        },
+        "columnFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnFilter"
+          }
+        },
+        "globalFilters": {
+          "$ref": "#/definitions/GlobalFilters"
+        },
+        "profileId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "GlobalFilter": {
+      "type": "object",
+      "properties": {
+        "searchText": {
+          "type": "string"
+        },
+        "advancedFilters": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "GlobalFilterChangeLog": {
+      "type": "object",
+      "properties": {
+        "searchText": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "GlobalFilters": {
+      "type": "object",
+      "properties": {
+        "searchText": {
+          "type": "string"
+        },
+        "dateRanges": {
+          "$ref": "#/definitions/DateRanges"
+        },
+        "campaigns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "marketPlaces": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MarketPlace"
+          }
+        },
+        "adTypes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AdType"
+          }
+        },
+        "advancedFilters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AdvancedFilter"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "IdentifiersDto": {
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "type": "string"
+        },
+        "profileId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "InputExpression": {
+      "type": "object",
+      "properties": {
+        "operand": {
+          "type": "string"
+        },
+        "input": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "InputExpressionDto": {
+      "type": "object",
+      "properties": {
+        "operand": {
+          "type": "string"
+        },
+        "input": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "LogicalOperator": {
+      "enum": [
+        "And",
+        "Or"
+      ],
+      "type": "string"
+    },
+    "LoginCommand": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "rememberMe": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "LogoutCommand": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "ManualMatchType": {
+      "type": "object",
+      "properties": {
+        "keywordMatch": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "productMatch": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "ManualMatchTypeDto": {
+      "type": "object",
+      "properties": {
+        "keywordMatch": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "productMatch": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "MapCampaignsCommand": {
+      "type": "object",
+      "properties": {
+        "ruleId": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "campaigns": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ApplyToCampaigns"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "MarketPlace": {
+      "enum": [
+        "AU",
+        "BR",
+        "CA",
+        "DE",
+        "ES",
+        "FR",
+        "IN",
+        "IT",
+        "JP",
+        "MX",
+        "UK",
+        "US",
+        "GB"
+      ],
+      "type": "string"
+    },
+    "MatchTypes": {
+      "type": "object",
+      "properties": {
+        "autoCampaign": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "manualCampaign": {
+          "$ref": "#/definitions/ManualMatchType"
+        }
+      },
+      "additionalProperties": false
+    },
+    "MatchTypesDto": {
+      "type": "object",
+      "properties": {
+        "autoCampaign": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "manualCampaign": {
+          "$ref": "#/definitions/ManualMatchTypeDto"
+        }
+      },
+      "additionalProperties": false
+    },
+    "OAuthLoginCommand": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "authToken": {
+          "type": "string"
+        },
+        "idToken": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Occurrence": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "time": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "OccurrenceDto": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "time": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "ProcessFailedTaskCommand": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "ProcessSpApiReportQueueCommand": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/QueueState"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "QueueAdsProcessCommand": {
+      "type": "object",
+      "properties": {
+        "priorities": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/QueuePriority"
+          }
+        },
+        "taskTypes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/QueueTaskType"
+          }
+        },
+        "statuses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/QueueStatus"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "QueueAdsProfileSyncCommand": {
+      "type": "object",
+      "properties": {
+        "profile": {
+          "$ref": "#/definitions/AdsProfiles"
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "QueueAdsSyncCommand": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "QueueAdsSyncUserCommand": {
+      "type": "object",
+      "properties": {
+        "daysToSync": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "timeUnit": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "QueuePriority": {
+      "enum": [
+        "Immediate",
+        "High",
+        "Normal",
+        "Low"
+      ],
+      "type": "string"
+    },
+    "QueueSpApiReportSyncCommand": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "QueueState": {
+      "enum": [
+        "Pending",
+        "Processing",
+        "IN_PROGRESS",
+        "IN_QUEUE",
+        "ReportDownloaded",
+        "ReportCompleted",
+        "Completed",
+        "Failed"
+      ],
+      "type": "string"
+    },
+    "QueueStatus": {
+      "enum": [
+        "Pending",
+        "Processing",
+        "Completed",
+        "Failed",
+        "Cancelled",
+        "Delayed",
+        "Paused",
+        "Suspended",
+        "Expired",
+        "Retrying",
+        "PendingReport",
+        "PendingMeta",
+        "PendingReportDownload",
+        "ReportDownloaded",
+        "MetaDownloaded",
+        "ProcessingZeroImp"
+      ],
+      "type": "string"
+    },
+    "QueueTaskType": {
+      "enum": [
+        "SyncUserAds",
+        "SyncUserMetaData",
+        "SyncUserReport",
+        "SyncUserReportV2",
+        "ProcessAdsData"
+      ],
+      "type": "string"
+    },
+    "ResendActivationEmailCommand": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ResetPasswordCommand": {
+      "type": "object",
+      "properties": {
+        "password": {
+          "type": "string"
+        },
+        "token": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "SaveMasterDataCommand": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "data": { }
+      },
+      "additionalProperties": false
+    },
+    "SaveSettingsCommand": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "SortDirection": {
+      "enum": [
+        "Ascending",
+        "Descending"
+      ],
+      "type": "string"
+    },
+    "SortOption": {
+      "type": "object",
+      "properties": {
+        "columnName": {
+          "type": "string"
+        },
+        "direction": {
+          "$ref": "#/definitions/SortDirection"
+        }
+      },
+      "additionalProperties": false
+    },
+    "SyncProfileToUserCommand": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "SyncZeroImpressionCommand": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "TargetCriteria": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TargetData"
+          }
+        },
+        "matchTypes": {
+          "$ref": "#/definitions/MatchTypes"
+        }
+      },
+      "additionalProperties": false
+    },
+    "TargetCriteriaDto": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TargetDataDto"
+          }
+        },
+        "matchTypes": {
+          "$ref": "#/definitions/MatchTypesDto"
+        }
+      },
+      "additionalProperties": false
+    },
+    "TargetData": {
+      "type": "object",
+      "properties": {
+        "logicalAND": {
+          "type": "boolean"
+        },
+        "expressions": {
+          "$ref": "#/definitions/Expression"
+        }
+      },
+      "additionalProperties": false
+    },
+    "TargetDataDto": {
+      "type": "object",
+      "properties": {
+        "logicalAND": {
+          "type": "boolean"
+        },
+        "expressions": {
+          "$ref": "#/definitions/ExpressionDto"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdateBulkCampaignCommand": {
+      "type": "object",
+      "properties": {
+        "profileId": {
+          "type": "string"
+        },
+        "campaigns": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ApplyToCampaigns"
+          }
+        },
+        "ruleId": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "userId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdateCampaignRuleCommand": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "profileId": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "template": {
+          "type": "boolean"
+        },
+        "targetCriteria": {
+          "$ref": "#/definitions/CampaignTargetCriteriaDto"
+        },
+        "actionCriteria": {
+          "$ref": "#/definitions/CampaignActionCriteriaDto"
+        },
+        "times": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "applyTo": {
+          "$ref": "#/definitions/ApplyToDto"
+        },
+        "applyZeroImpression": {
+          "type": "boolean"
+        },
+        "isTargetRule": {
+          "type": "boolean"
+        },
+        "isCampaignRule": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdatePasswordCommand": {
+      "type": "object",
+      "properties": {
+        "oldPassword": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdatePermissionCommand": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "isActive": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdateProfilePreferencesCommand": {
+      "type": "object",
+      "properties": {
+        "awsProfilePreferences": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AwsProfilePreferenceCommand"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdateProfilesCommand": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "userName": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phoneNumber": {
+          "type": "string"
+        },
+        "currencyTypeSelection": {
+          "type": "string"
+        },
+        "pageReadestimate": {
+          "type": "string"
+        },
+        "timeZoneSelection": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdateRoleCommand": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "permissionId": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdateRuleCommand": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "profileId": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "template": {
+          "type": "boolean"
+        },
+        "targetCriteria": {
+          "$ref": "#/definitions/TargetCriteriaDto"
+        },
+        "actionCriteria": {
+          "$ref": "#/definitions/ActionCriteriaDto"
+        },
+        "automationCriteria": {
+          "$ref": "#/definitions/TargetCriteriaDto"
+        },
+        "frequency": {
+          "$ref": "#/definitions/FrequencyDto"
+        },
+        "applyTo": {
+          "$ref": "#/definitions/ApplyToDto"
+        },
+        "applyZeroImpression": {
+          "type": "boolean"
+        },
+        "isTargetRule": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdateRulesStatusCommand": {
+      "type": "object",
+      "properties": {
+        "ruleId": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "status": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdateTemplateCommand": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "profileId": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "targetCriteria": {
+          "$ref": "#/definitions/TargetCriteria"
+        },
+        "actionCriteria": {
+          "$ref": "#/definitions/ActionCriteria"
+        },
+        "automationCriteria": {
+          "$ref": "#/definitions/TargetCriteria"
+        },
+        "frequency": {
+          "$ref": "#/definitions/Frequency"
+        },
+        "isTargetRule": {
+          "type": "boolean"
+        },
+        "applyZeroImpression": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdateTemplateStatusCommand": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "status": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdateUserCommand": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "userName": {
+          "type": "string"
+        },
+        "isActive": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Where": {
+      "type": "object",
+      "properties": {
+        "field": {
+          "type": "string"
+        },
+        "filterType": {
+          "$ref": "#/definitions/FilterType"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "securityDefinitions": {
+    "Bearer": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header",
+      "description": "Enter 'Bearer' [space] and then your valid token in the text input below.\r\n\r\nExample: \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\""
+    }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
+}
