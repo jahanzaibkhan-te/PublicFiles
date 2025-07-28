@@ -42,9 +42,22 @@
   <h1>Public Files</h1>
   <ul>
     <li><a href="files/swagger.json" > Amozon Ads Swagger </a></li>
-    <li><a href="files/image1.png" download>Image 1 (PNG)</a></li>
-    <li><a href="files/data.json" download>Data File (JSON)</a></li>
-    <li><a href="files/archive.zip" download>Archive (ZIP)</a></li>
+  </ul>
+  <h1>Public Assests</h1>
+  <ul>
+    <li><a href="files/swagger.json" > Images </a></li>
   </ul>
 </body>
+<script>
+  document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const fullUrl = new URL(link.getAttribute('href'), window.location.href).href;
+      navigator.clipboard.writeText(fullUrl)
+        .then(() => alert(`Copied URL:\n${fullUrl}`))
+        .catch(() => alert('Failed to copy URL'));
+    });
+  });
+</script>
+
 </html>
